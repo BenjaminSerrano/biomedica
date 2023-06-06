@@ -1,13 +1,18 @@
 <!-- templates/registration/login.html -->
 {% extends 'base.html' %}
+{% load static %} 
 
 {% block title %}Login{% endblock %}
 
 {% block content %}
 <style>
     .loginDiv {
-      margin: auto;
-      max-width: max-content;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
 
     } .botong {
       background-color: #06262D;
@@ -28,11 +33,7 @@
       font-family: Arial;
     }
   </style>
-  <div>
-    <h2>
-      <img src="uv_logo.png"/>
-    </h2>
-  </div>
+<img style="width: 245px; height: 247px;" src="{% static 'uv_logo.png' %}"/>
 <div class="loginDiv">
   <form class="estiloForm" method="post">
     
