@@ -4,10 +4,42 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-</form>
+<style>
+    .loginDiv {
+      margin: auto;
+      max-width: max-content;
+
+    } .botong {
+      background-color: #06262D;
+      align-items: center;
+      border: none;
+      color: white;
+      height: 30px;
+      width: 100px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+      margin: auto;
+    }
+    .estiloForm {
+      font-size: 30px;
+      font-family: Arial;
+    }
+  </style>
+  <div>
+    <h2>
+      <img src="uv_logo.png"/>
+    </h2>
+  </div>
+<div class="loginDiv">
+  <form class="estiloForm" method="post">
+    
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="botong">Log In</button>
+  </form>
+</div>
 {% endblock %}
