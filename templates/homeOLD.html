@@ -1,0 +1,43 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+<style>
+  .loginDiv {
+    margin: auto;
+    max-width: max-content;
+  }
+  .titulo {
+    font-size: large;
+    align-items: center;
+  }
+    .botong {
+      background-color: blue;
+      align-items: center;
+      border: none;
+      color: white;
+      height: 20px;
+      width: 80px;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      align-items: center;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 8px;
+  }
+  </style>
+
+  <div class="loginDiv">
+    <p class="titulo">You are not logged in</p>
+    <a class="botong" href="{% url 'login' %}">Log In</a>
+  </div>
+  
+{% endif %}
+{% endblock %}

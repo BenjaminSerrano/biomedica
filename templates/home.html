@@ -1,13 +1,117 @@
-<!-- templates/home.html-->
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
+<!-- aquí va lo que se debe mostrar en el main del proto en aXD -->
+<style>
+    .backgroundStyle {
+        background-color: #06262D;
+        width: 98%;
+        /* border: 1px;
+        border-style: solid;
+        border-color: #06262D; */
+        padding: none;
+        margin: none;
+    }
+    .divFiltros {
+        height: 95px;
+        margin-top: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+        border: 2px;
+        border-style: solid;
+        border-color: whitesmoke;
+        
+    }
+    .fontH1 {
+        font-size: 30px;
+        font-family: Arial;
+        color: white;
+        margin-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+    .fontFilters {
+        font-size: large;
+        font-family: arial;
+        color: white;
+
+    }
+    .dropdown {
+        height: 25px;
+        font-family: arial;
+        font-size: 18px;
+        background-color: white;
+        color: black;
+    }
+    .divPacientes {
+        height: 495px;
+        margin-top: 7px;
+        margin-bottom: 2px;
+        margin-left: 15px;
+        margin-right: 15px;
+        border: 2px;  
+        border-style: solid;
+        border-color: whitesmoke;
+    }
+    .divBotones {
+        height: 80px;
+        border: 1px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .btnsBottom {
+        height: 40px;
+        width: 100px;
+    }
+
+</style>
+
+<!-- este div es el fondo de la página -->
+<body class="backgroundStyle">
+    <!-- este div es el primer box donde están los filtros-->
+    <div class="divFiltros">
+        <h1 class="fontH1">Filtros</h1>
+        <form class="fontFilters" style="margin-left: 40px; margin-bottom: 15px; margin-top: 5px;">
+            <label for="pacienteName">Nombre:</label>
+            <input type="text" id="pacienteName" name="pacienteName" style="width:200px;">
+
+            <label for="pacienteRun" style="margin-left: 30px;">RUN:</label>
+            <input type="text" id="pacienteRun" name="pacienteRun" >
+
+            <label for="fechaFiltro" style="margin-left: 30px;">Fecha:</label>
+            <input type="text" id="fechaFiltro" name="fechaFiltro">
+
+            <label for="condicionEstandar" style="margin-left: 30px;">Condición Estandar:</label>
+              <select class="dropdown" name="condicionEstandar" id="condicionEstandar">
+                <option value="cond1">Condición 1</option>
+                <option value="cond2">Condición 2</option>
+                <option value="cond3">Condición 3</option>
+              </select>
+        </form>
+    </div>
+
+    <!-- este div es el que contiene las carpetas por paciente -->
+    <div class="divPacientes">
+
+    </div>
+
+    <!-- este div es el que contiene los botones de cerrar sesión, cargar y dashboard-->
+    <div class="divBotones">
+        <button class="btnsBottom" style="float:left; margin-top: 10px;">Cerrar Sesión</button>
+        <div style="float:right;">
+            <button class="btnsBottom" style="margin-top: 10px; margin-left: 20px;">Cargar</button>
+            <button class="btnsBottom" style="margin-top: 10px; margin-left: 20px;">Dashboard</button>
+        </div>
+    </div>
+</body>
+
+
 {% else %}
+
+<!-- CAMBIAR ESTO A QUE EL DEFAULT DEL IF SEA EL LOGIN COMO TAL Y NO UN AVISO PARA REDIRECT-->
 <style>
   .loginDiv {
     margin: auto;
