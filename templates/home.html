@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %} 
 {% block title %}Home{% endblock %}
 
 {% block content %}
@@ -100,7 +100,7 @@
 
     <!-- este div es el que contiene los botones de cerrar sesión, cargar y dashboard-->
     <div class="divBotones">
-        <button class="btnsBottom" style="float:left; margin-top: 10px;">Cerrar Sesión</button>
+        <button class="btnsBottom" href="/templates/registration/login.html" style="float:left; margin-top: 10px;">Cerrar Sesión</button>
         <div style="float:right;">
             <button class="btnsBottom" style="margin-top: 10px; margin-left: 20px;">Cargar</button>
             <button class="btnsBottom" style="margin-top: 10px; margin-left: 20px;">Dashboard</button>
@@ -143,5 +143,6 @@
     <a class="botong" href="{% url 'login' %}">Log In</a>
   </div>
   
+
 {% endif %}
 {% endblock %}
